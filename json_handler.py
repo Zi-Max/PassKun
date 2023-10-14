@@ -9,8 +9,8 @@ def read_json(file_path):
     Arguments:
         file_path: Given json file path
     """
-    with open(file_path) as data:
-        json_data = json.load(data)
+    with open(file_path, encoding="utf-8") as file:
+        json_data = json.load(file)
 
     return json_data
 
@@ -23,8 +23,8 @@ def write_json(file_path, json_data):
         file_path: Given json file path
         json_data: data to write into json file
     """
-    with open(file_path, "w") as w:
-        json.dump(json_data, w, indent=2)
+    with open(file_path, "w", encoding="utf-8") as file:
+        json.dump(json_data, file, indent=2)
 
 
 def append_json(file_path, new_data):
